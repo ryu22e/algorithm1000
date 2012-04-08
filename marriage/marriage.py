@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-「安定な結婚の問題」（「C言語による最新アルゴリズム事典」4ページより） 
+「安定な結婚の問題」（「C言語による最新アルゴリズム事典」4ページより）
 """
+
+
 def marriage(girls_ranks, boys_ranks):
-    pairs = {} 
-    positions  = {}
+    pairs = {}
+    positions = {}
     for boy in boys_ranks.keys():
         s = boy
         while (s is not None):
@@ -40,19 +42,19 @@ def marriage(girls_ranks, boys_ranks):
 if __name__ == '__main__':
     # 各女性の好み。
     girls_ranks = {
-            '1': ['a', 'b', 'c', 'd'], 
-            '2': ['c', 'b', 'a', 'd'], 
-            '3': ['a', 'b', 'd', 'c'], 
-            '4': ['c', 'a', 'd', 'b'], 
+            '1': ['a', 'b', 'c', 'd'],
+            '2': ['c', 'b', 'a', 'd'],
+            '3': ['a', 'b', 'd', 'c'],
+            '4': ['c', 'a', 'd', 'b'],
             }
     # 各男性の好み。
     boys_ranks = {
-            'a': ['1', '2', '3', '4'], 
-            'b': ['2', '1', '4', '3'], 
-            'c': ['2', '3', '1', '4'], 
-            'd': ['1', '4', '3', '2'], 
+            'a': ['1', '2', '3', '4'],
+            'b': ['2', '1', '4', '3'],
+            'c': ['2', '3', '1', '4'],
+            'd': ['1', '4', '3', '2'],
             }
-    pairs = marriage(girls_ranks, boys_ranks) 
+    pairs = marriage(girls_ranks, boys_ranks)
     assert(pairs is not None)
     assert(len(pairs) == 4)
     assert(('1', 'a') in pairs)
