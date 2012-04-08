@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+「安定な結婚の問題」（「C言語による最新アルゴリズム事典」4ページより） 
+"""
 def marriage(girls_ranks, boys_ranks):
     pairs = {} 
     positions  = {}
