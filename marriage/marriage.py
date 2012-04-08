@@ -11,7 +11,7 @@ def marriage(girls_ranks, boys_ranks):
     for boy in boys_ranks.keys():
         s = boy
         while (s is not None):
-            print('-' * 30)
+            print("-" * 30)
             position = positions.get(s, 0)
             positions[s] = position + 1
             girl = boys_ranks.get(s)[position]
@@ -27,15 +27,15 @@ def marriage(girls_ranks, boys_ranks):
             if (fiancees_rank is None or proposed_boys_rank < fiancees_rank):
                 # 女性が未婚なら、婚約成立になる。
                 # 女性が既に婚約している場合は、プロポーズした男性が婚約者より上のランクであれば、前の婚約を破棄して婚約する。
-                print(u'女%s「よろしくお願いします」' % girl)
+                print(u"女%s「よろしくお願いします」" % girl)
                 fiancee = pairs.get(girl)
                 if (fiancee is not None):
-                    print(u'女%s「男%sさん、婚約破棄してください」' % (girl, fiancee))
-                    print(u'男%s「（´・ω・｀）」' % fiancee)
+                    print(u"女%s「男%sさん、婚約破棄してください」" % (girl, fiancee))
+                    print(u"男%s「（´・ω・｀）」" % fiancee)
                 pairs[girl], s = s, pairs.get(girl)
             else:
-                print(u'女%s「ごめんなさい」' % girl)
-            print('-' * 30)
+                print(u"女%s「ごめんなさい」" % girl)
+            print("-" * 30)
 
     return tuple([(girl, boy) for girl, boy in pairs.items()])
 
@@ -61,6 +61,6 @@ if __name__ == '__main__':
     assert(('2', 'c') in pairs)
     assert(('3', 'b') in pairs)
     assert(('4', 'd') in pairs)
-    print(u'--成立したカップル--')
+    print(u"--成立したカップル--")
     for pair in pairs:
-        print(u'女%s: 男%s' % (pair[0], pair[1]))
+        print(u"女%s: 男%s" % (pair[0], pair[1]))
