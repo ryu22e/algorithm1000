@@ -26,7 +26,7 @@ while(n != 0):
         print(u"私は%d個の石を取ります." % x)
     else:
         r = False
-        while (not r or x <= 0 or x > m or x > n):
+        while (not r or x <= 0 or m < x or n < x):
             x = get_num(u"何個取りますか？")
             r = True
     n -= x
